@@ -35,8 +35,8 @@
  		printf("Child process has ended\n");
  	}
  	else{
- 		printf("This is parent process\n");
- 		printf("Parent process has ended\n");
+ 		printf("This is parent process\n Parent process has ended\n");
+ 	
  	}
  }
  	
