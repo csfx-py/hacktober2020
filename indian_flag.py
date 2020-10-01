@@ -2,6 +2,7 @@ import turtle
 from turtle import*
  
 #screen for output
+#getoutput
 screen = turtle.Screen()
  
 # Defining a turtle Instance
