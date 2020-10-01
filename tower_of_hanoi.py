@@ -1,4 +1,4 @@
-# Tower of hanoi
+# Tower of hanoii
 
 
 def solve(N,s,d,h):
