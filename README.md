@@ -1,3 +1,3 @@
 # hacktober2020
 
-make pull requests and enjoy the month
+Make pull requests and enjoy the month
