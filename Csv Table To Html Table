@@ -1,0 +1,20 @@
+#note this program takes two argument 
+#1)csv file name 
+#2) what is used to seperate column in csv like |,-,or it can be space
+#just copy and paste output to html file it will work fine 
+import sys
+def convertToHtml(filename,sep):
+	tbody=[]
+	with open(filename,"r") as f:
+		for line in f.readlines():
+			tbody.append(line.split(sep))
+	htmlcode="<table>"
+	for tr in tbody:
+		htmlcode+="<tr>"
+		for td in tr:
+			htmlcode+=f"<td>{td}</td>"
+		htmlcode+="</tr>"
+	htmlcode+="</table>"
+	print(htmlcode)
+
+convertToHtml(sys.argv[1],sys.argv[2])
