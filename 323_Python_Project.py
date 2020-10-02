@@ -1,5 +1,5 @@
 
-#Password_Generator
+#Random Password_Generator
 import random
 import string
 
