@@ -1,7 +1,8 @@
 #include<stdio.h>
-
+#include<conio.h>
 #include<unistd.h>
  #include<sys/types.h>
+clrscr();
  void childprocess(unsigned long long int k)
  {
  	int v;
