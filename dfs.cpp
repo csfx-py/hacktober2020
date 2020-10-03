@@ -1,29 +1,62 @@
-vector<vector<int>> adj; // graph represented as an adjacency list
-int n; // number of vertices
-int m; // number of edges
-vector<bool> visited;
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
-void dfs(int v) {
-    visited[v] = true;
-    for (int u : adj[v]) {
-        if (!visited[u])
-            dfs(u);
+vector<int> adj[10];
+
+bool visited[10];
+
+void dfs(int s){    // source vertex is passed as a param
+visited[s]= true;
+for(int i=0;i<adj[s].size();++i){
+
+    if(visited[adj[s][i]] == false)
+
+    dfs(adj[s][i]);
+}
+
+
+}
+
+void initialize(){
+for(int i=0;i<10;i++)
+visited[i]= false;
+}
+
+int main(){
+
+
+    int nodes,edges,u,v,connectedComponents= 0;
+
+
+    cin>>nodes;  //number of nodes
+    cin>>edges;  // number of edges
+
+for(int i=0;i<edges;++i){
+
+    cin>>u>>v;
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+}
+
+initialize();
+// the above func marked all node as not visited;
+
+for(int i=1;i<= nodes;++i){
+
+
+    if(visited[i]== false){
+
+       dfs(i);
+        connectedComponents++;
     }
 }
 
-int main () {
-    cin >> n >> m;
-    adj.resize (n);
-    visited.assign(n, false);
-    for (int i = 0; i < m; ++i) {
-        int u, v;
-        cin >> u >> v;
-        graph[u].push_back(v);
-        graph[v].push_back(u);
-    }
-    
-    for (int i = 1; i <= n; ++i) {
-        if (!visited[i]) dfs(i);
-    }
-    return 0;
+
+if(connectedComponents ==1){
+cout<<"1";}
+else{
+    cout<<"0";
+}
+return 0;
 }
