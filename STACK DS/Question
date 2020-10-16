@@ -1,0 +1,41 @@
+QUESTION DESCRIPTION
+
+Sima Guang was nine years old. He liked to play in his backyard with his friends Wang Wei, Li Na, and Zhang Yong.
+
+One day, the friends were playing in the yard. Wang Wei said, “I bet I can go up to the top of the water vat!” A water vat is a very big clay jar used to keep rain water. But Wang wei failed to win the task. So he need to accept the penalty game conducted by other friends. Penalty technical game contains many technical concepts to implement. Wang wei chooses the task randomly. it contains the question like, Create a data structure twoStacks that represents two stacks. Implementation of twoStacks should use only one array, i.e., both stacks should use the same array for storing elements. Following functions must be supported by twoStacks.
+
+push1(int x) > pushes x to first stack
+push2(int x) > pushes x to second stack
+
+pop1() > pops an element from first stack and return the popped element
+pop2() > pops an element from second stack and return the popped element
+
+Mandatory declaration is "void push1(int x)", "int pop1()", "int pop2()",void push2(int x)"
+
+
+INPUT:
+The first line of the input must contain number of elements in the array used for stack implementation.
+The second line of input must contain elements to be present in first stack
+The third line of input must contain elements to be present in second stack
+
+OUTPUT:
+pop out the top element from first stack
+pop out the top element from second stack
+TEST CASE 1
+
+INPUT
+3
+3 5 2
+6 1 9
+OUTPUT
+Popped element from stack1 is 2
+Popped element from stack2 is 9
+TEST CASE 2
+
+INPUT
+3
+4 1 2 
+8 5 3 
+OUTPUT
+Popped element from stack1 is 2
+Popped element from stack2 is 3
