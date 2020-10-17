@@ -1,0 +1,32 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+// sorts sequence s of length n
+
+void mergesort(int s[], int n){
+    if(n==1)    return;
+    //create u ,v from s
+    int u[n/2], v[n-n/2]; //local arrays
+
+    for(int i=0;i<n/2;i++){
+        u[i]=s[i];  //copy of first half
+    }
+    for(int i=0;i<n-n/2;i++){
+        v[i]=s[i+n/2];  //copy of second half
+    }
+
+//sort halves
+    mergesort(u,n/2);
+    mergesort(v,n-n/2);
+//merge into original array s
+    merge(u,u+n/2,v,v+(n-n/2),s);
+}
+
+int main(){
+    int a[8]={10,552,36,-55,3,8,-96,4};
+    mergesort(a,8);
+    for(int i=0;i<8;i++){
+        cout<<a[i]<<" ";
+    }
+}
