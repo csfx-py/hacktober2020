@@ -29,7 +29,7 @@ def solve(n):
     while i < n:  
   
         # Current term will be smallest prime  
-        # factor of (1 + product of all previous terms) 
+        # factor of (1 + product of all previous terms)  
         num = smallestPrimeFactor(product + 1)  
   
         # Print the current term  
