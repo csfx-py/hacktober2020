@@ -1,0 +1,41 @@
+#![no_std] // Standard Library is Excluded
+
+extern crate alloc; // Memory Allocation through external module
+
+// Function modules 
+use alloc::borrow::ToOwned;
+use alloc::string::String;
+
+// import println to print debug messages
+use linux_kernel_module::println;
+
+// Struct to store data
+struct HelloWorldModule {
+ message: String,
+}
+
+// Implement kernel module TRAIT on struct
+impl linux_kernel_module::KernelModule for HelloWorldModule {
+ fn init() -> linux_kernel_module::KernelResult<Self> {
+     println!("Hello kernel module!");
+     Ok(HelloWorldModule {
+         message: "on the heap!".to_owned(),
+     })
+ }
+}
+
+// Drop called when module is closed and memory is cleaned up.
+impl Drop for HelloWorldModule {
+ fn drop(&mut self) {
+     println!("My message is {}", self.message);
+     println!("Goodbye kernel module!");
+ }
+}
+// Module Metadata
+
+linux_kernel_module::kernel_module!(
+ HelloWorldModule,
+ author: b"Rahul Maurya",
+ description: b"Test Module",
+ license: b"GPL"
+);
